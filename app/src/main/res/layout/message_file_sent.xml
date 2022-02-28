@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/message_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:longClickable="true">
+
+    <View
+        android:id="@+id/message_padding"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/message_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/message_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/message_background"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/message_padding">
+
+        <TextView
+            android:id="@+id/message_file_uri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/message_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:id="@+id/message_reply_border"
+            android:layout_width="10dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="36dp"
+            app:layout_constraintBottom_toTopOf="@id/message_file_container"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/message_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/message_metadata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints" />
+
+        <RelativeLayout
+            android:id="@+id/message_file_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/message_shape_sent"
+            android:maxWidth="236dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#FFFFFF"
+            android:textColorLink="#a5f9ff"
+            android:textSize="14sp"
+            app:layout_constraintRight_toLeftOf="@id/message_triangle"
+            app:layout_constraintTop_toBottomOf="@id/message_textview_reply">
+
+            <ImageView
+                android:id="@+id/message_file_preview"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                app:srcCompat="@drawable/file_default_preview"
+                android:contentDescription="TODO" />
+
+            <TextView
+                android:id="@+id/message_textview"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/file_description_background"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:textSize="12sp"
+                android:layout_below="@id/message_file_preview" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignRight="@id/message_file_preview"
+                android:layout_alignBottom="@id/message_file_preview"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp">
+
+                <ProgressBar
+                    android:id="@+id/message_file_status_progressbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:theme="@style/AppTheme.DarkProgressBar"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/message_file_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="TODO" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/message_textview_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/message_shape_reply_sent"
+            android:maxWidth="236dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/message_file_container"
+            app:layout_constraintRight_toLeftOf="@id/message_reply_border"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/message_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            app:layout_constraintRight_toLeftOf="@id/message_file_container"
+            app:layout_constraintTop_toBottomOf="@id/message_textview_reply" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/message_triangle"
+            android:layout_width="10dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/message_triangle_sent"
+            android:rotation="180"
+            app:layout_constraintBottom_toBottomOf="@id/message_file_container"
+            app:layout_constraintRight_toRightOf="parent">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

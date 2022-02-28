@@ -1,0 +1,82 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar.Bridge">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkest</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.AppBar">
+        <item name="colorControlHighlight">@color/colorPrimaryDarkLight</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.MainActivity">
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.myButtonTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.LightButton">
+        <item name="colorPrimary">@color/md_white_1000</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
+
+    <style name="Widget.AppCompat.Button.Colored.myButtonTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.ProfileActivity">
+        <item name="android:itemBackground">@drawable/menu_item_background</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.EditProfileActivity"/>
+
+    <style name="AppTheme.NoActionBar.CallActivity"/>
+
+    <style name="AppTheme.NoActionBar.EditProfileActivity.WindowAnimation">
+        <item name="android:windowEnterAnimation">@anim/popup_show</item>
+        <item name="android:windowExitAnimation">@anim/popup_hide</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.ChatActivity">
+        <item name="android:itemBackground">@drawable/menu_item_background</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.FriendActivity">
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.FriendActivity.NavigationDrawer">
+        <item name="colorControlHighlight">@android:color/transparent</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.AppBar.SearchTheme">
+        <item name="colorControlHighlight">@color/md_grey_300</item>
+    </style>
+
+    <style name="AppTheme.DarkProgressBar">
+        <item name="colorAccent">@color/colorBlackLight</item>
+    </style>
+
+    <style name="AppTheme.MainProgressBar">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+</resources>

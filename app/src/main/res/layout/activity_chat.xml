@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGreyPrimary"
+    tools:context=".ChatActivity">
+
+    <TextView
+        android:id="@+id/no_chats_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/myapp_chat_no_messages_text"
+        android:visibility="invisible" />
+
+    <com.example.myapplication.views.MessageListView
+        android:id="@+id/messages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/type_chat_ui"
+        android:layout_below="@id/chatactivity_appabr"
+        android:clipToPadding="false"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:listSelector="@android:color/transparent"
+        android:paddingBottom="8dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="normal" />
+
+    <TextView
+        android:id="@+id/chat_date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/chatactivity_appabr"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/date_view_background"
+        android:paddingLeft="12dp"
+        android:paddingTop="4dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="6dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/type_chat_ui"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/reply_chatbox_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chatbox_reply_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/attachment_button"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clear_reply_parent"
+                android:layout_width="24dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/chatbox_reply_border"
+                app:layout_constraintLeft_toRightOf="@id/chatbox_reply_border"
+                app:layout_constraintTop_toTopOf="@id/chatbox_reply_border">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clear_reply"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/ic_close_black_24dp"
+                    android:onClick="replyMessageCancelled"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/chatbox_reply_border"
+                android:layout_width="10dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="24dp"
+                android:background="#EEEEEE"
+                app:layout_constraintBottom_toBottomOf="@id/chatbox_reply"
+                app:layout_constraintRight_toRightOf="@id/chatbox"
+                app:layout_constraintTop_toTopOf="@id/chatbox_reply" />
+
+            <TextView
+                android:id="@+id/chatbox_reply"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/message_chatbox_reply_shape"
+                android:paddingLeft="16dp"
+                android:paddingTop="10dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="10dp"
+                android:singleLine="false"
+                android:textColor="#FFFFFF"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/chatbox"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/chatbox_reply_border" />
+
+            <EditText
+                android:id="@+id/chatbox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autofillHints="message"
+                android:background="@drawable/chatbox_background"
+                android:hint="@string/myapp_chatbox_hint"
+                android:imeOptions="flagNoExtractUi|flagNoFullscreen"
+                android:inputType="textMultiLine"
+                android:maxLines="6"
+                android:paddingLeft="16dp"
+                android:paddingTop="10dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="10dp"
+                android:scrollbars="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:id="@+id/attachment_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/message_attach_button"
+            android:contentDescription="@string/myapp_icon_button_content_desc"
+            android:foregroundGravity="center"
+            android:onClick="chooseFile"
+            android:rotation="45"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/send_message_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/reply_chatbox_container"
+            app:srcCompat="@drawable/ic_attach_file_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/send_message_button"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/message_send_button"
+            android:contentDescription="@string/myapp_icon_button_content_desc"
+            android:foregroundGravity="center"
+            android:onClick="sendMessage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/attachment_button"
+            app:srcCompat="@drawable/ic_send_white_24dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/chatactivity_appabr"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimaryDark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/AppTheme.NoActionBar.AppBar"
+        app:contentInsetStart="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/appbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/chat_friend_icon"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:contentDescription="@string/myapp_icon_button_content_desc"
+                android:onClick="viewProfile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toEndOf="@id/imageButton_back"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_account_circle_white_24dp"
+                tools:srcCompat="@drawable/ic_account_circle_white_24dp" />
+
+            <TextView
+                android:id="@+id/chat_friend_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/chat_friend_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/imageButton_options"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/action_bar_button_selectable"
+                android:contentDescription="@string/myapp_icon_button_content_desc"
+                android:onClick="onOptionsClick"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_more_vert_white_24dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton_back"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/action_bar_button_selectable"
+                android:contentDescription="@string/myapp_icon_button_content_desc"
+                android:onClick="onBackButtonPressed"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_arrow_back_white_24dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton_call"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:translationX="10dp"
+                android:background="@drawable/action_bar_button_selectable"
+                android:contentDescription="@string/myapp_icon_button_content_desc"
+                android:onClick="callFriend"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@id/imageButton_options"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_videocam_24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</RelativeLayout>

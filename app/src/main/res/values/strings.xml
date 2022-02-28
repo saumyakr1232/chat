@@ -1,0 +1,73 @@
+<resources>
+    <!-- app -->
+    <string name="app_name" translatable="false">Chat</string>
+
+    <!-- signup -->
+    <string name="myapp_signup_text" translatable="true">Sign Up</string>
+    <string name="myapp_email_text" translatable="true">Email</string>
+    <string name="myapp_name_text" translatable="true">Name</string>
+    <string name="myapp_password_text" translatable="true">Password</string>
+    <string name="myapp_retype_password_text" translatable="true">Retype Password</string>
+    <string name="myapp_registering_text" translatable="true">Registering</string>
+    <string name="myapp_createAccount_text" translatable="true">Create Account</string>
+
+    <!-- login -->
+    <string name="myapp_login_text" translatable="true">Login</string>
+    <string name="myapp_loggingIn_text" translatable="true">Logging in</string>
+
+    <!-- friends -->
+    <string name="myapp_logout_text" translatable="true">Log Out</string>
+    <string name="myapp_friends" translatable="true">My Friends</string>
+    <string name="myapp_friend_requests" translatable="true">Friend Requests</string>
+    <string name="myapp_friends_text" translatable="true">Friends</string>
+    <string name="myapp_sent_requests" translatable="true">Sent Requests</string>
+    <string name="myapp_no_friends_message" translatable="true">It\'s very lonely here!</string>
+    <string name="myapp_accept_friend" translatable="true">Accept</string>
+    <string name="myapp_reject_friend" translatable="true">Reject</string>
+    <string name="myapp_avatar_friend" translatable="true">Avatar</string>
+    <string name="myapp_status_text" translatable="true">Status</string>
+    <string name="myapp_friend_status_0" translatable="true">friend</string>
+    <string name="myapp_friend_status_received" translatable="false">received_request</string>
+    <string name="myapp_friend_status_sent" translatable="false">sent_request</string>
+
+    <!-- add friend -->
+    <string name="myapp_requestsent_message" translatable="true">Sent Request</string>
+    <string name="myapp_isfriend_message" translatable="true">This user is your friend</string>
+    <string name="myapp_requestreceived_message" translatable="true">Request Received</string>
+    <string name="myapp_sendrequest_button" translatable="true">Send Request</string>
+    <string name="myapp_search_friends_hint" translatable="true">Search for a friend</string>
+    <string name="myapp_add_friend_text" translatable="true">Add Friend</string>
+    <string name="myapp_add_friend_no_results" translatable="true">No Results</string>
+
+    <!-- profile -->
+    <string name="myapp_profile_text" translatable="true">Profile</string>
+    <string name="myapp_no_friends_message_profile" translatable="true">No friends</string>
+    <string name="myapp_profile_menu_connect" translatable="true">Connect</string>
+    <string name="myapp_profile_status_default" translatable="true">Just started using Nosk</string>
+
+    <!-- edit profile -->
+    <string name="myapp_profile_item_description" translatable="true">View and edit profile</string>
+    <string name="myapp_edit_profile_text" translatable="true">Edit Profile</string>
+    <string name="myapp_edit_name_text" translatable="true">Edit your name</string>
+    <string name="myapp_edit_status_text" translatable="true">Edit your status</string>
+    <string name="myapp_cancel_text" translatable="true">Cancel</string>
+    <string name="myapp_save_text" translatable="true">Save</string>
+    <string name="myapp_remove_image_text" translatable="true">Remove image</string>
+    <string name="myapp_add_image_text" translatable="true">Add new image</string>
+    <string name="myapp_edit_name_helper_text" translatable="true">Username must be at least 8 characters long</string>
+    <string name="myapp_edit_status_helper_text" translatable="true">Status must be at least 4 characters long</string>
+    <string name="myapp_storage_profile_images" translatable="true">Profile Images</string>
+
+    <!-- chat -->
+    <string name="title_activity_chat">ChatActivity</string>
+    <string name="myapp_chat_no_messages_text" translatable="true">Try sending a message</string>
+    <string name="myapp_chatbox_hint" translatable="true">Say something…</string>
+    <string name="myapp_chat_menu_delete_conversation" translatable="true">Delete Conversation</string>
+    <string name="myapp_chat_menu_delete_selected_chats" translatable="true">Delete Selected Chats</string>
+    <string name="myapp_storage_user_files" translatable="true">Users</string>
+
+    <!-- content description -->
+    <string name="myapp_icon_button_content_desc" translatable="true">Icon Button</string>
+    <string name="myapp_add_background_content_desc" translatable="true">Background</string>
+
+</resources>

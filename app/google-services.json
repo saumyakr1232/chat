@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "643530084451",
+    "firebase_url": "https://videocallingapp-3cbcf-default-rtdb.firebaseio.com",
+    "project_id": "videocallingapp-3cbcf",
+    "storage_bucket": "videocallingapp-3cbcf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643530084451:android:2687b8b751307dce78e856",
+        "android_client_info": {
+          "package_name": "com.developerspace.webrtcsample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643530084451-krf8p4grlpjv8h6r7f6dq6356uejq9mr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJoIZVOAH4jsRt6PKU2ijL9jTfo5PJpSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643530084451-krf8p4grlpjv8h6r7f6dq6356uejq9mr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643530084451:android:f1afb29a9234f91478e856",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643530084451-krf8p4grlpjv8h6r7f6dq6356uejq9mr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJoIZVOAH4jsRt6PKU2ijL9jTfo5PJpSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643530084451-krf8p4grlpjv8h6r7f6dq6356uejq9mr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643530084451:android:d9ae92fbb079e11d78e856",
+        "android_client_info": {
+          "package_name": "com.goodapps.videocalingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643530084451-krf8p4grlpjv8h6r7f6dq6356uejq9mr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJoIZVOAH4jsRt6PKU2ijL9jTfo5PJpSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643530084451-krf8p4grlpjv8h6r7f6dq6356uejq9mr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643530084451:android:0600165c2b98e38878e856",
+        "android_client_info": {
+          "package_name": "com.pods.pods_video_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643530084451-krf8p4grlpjv8h6r7f6dq6356uejq9mr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJoIZVOAH4jsRt6PKU2ijL9jTfo5PJpSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643530084451-krf8p4grlpjv8h6r7f6dq6356uejq9mr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
