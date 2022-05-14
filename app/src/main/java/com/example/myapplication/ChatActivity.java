@@ -173,6 +173,13 @@ public class ChatActivity extends AppCompatActivity {
     private TextView dateView;
     private Bitmap chatFriendIconCache;
 
+    //activity codes
+    private final int ADD_FRIEND_REQUEST_CODE = 0;
+    private final int CALL_REQUEST_CODE = 1;
+
+    //webrtc
+    private boolean CALL_STARTED = false;
+
     //helper classes
     class SyncMessages extends TimerTask{
         @Override
@@ -864,6 +871,13 @@ public class ChatActivity extends AppCompatActivity {
         }
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setupCallListener();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -1260,6 +1274,23 @@ public class ChatActivity extends AppCompatActivity {
         }
         result.close();
     }
+
+    private void setupCallListener() {
+        db.document("users/" + user.getUid()).addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                if(value != null  &&  value.get("sdp") != null)
+                {
+                    Intent callIntent = new Intent(ChatActivity.this, CallActivity.class);
+                    callIntent.putExtra("userUid", user.getUid());
+                    callIntent.putExtra("friendUid", (String) value.get("call"));
+                    if(!CALL_STARTED) startActivityForResult(callIntent, CALL_REQUEST_CODE);
+                    CALL_STARTED = true;
+                }
+            }
+        });
+    }
+
 
     private void updateUI() {
         adapter.notifyDataSetChanged();
