@@ -11,6 +11,8 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -155,6 +157,15 @@ public class CallActivity extends AppCompatActivity {
         userUid = getIntent().getStringExtra("userUid");
         friendUid = getIntent().getStringExtra("friendUid");
         isInitiator = getIntent().getBooleanExtra("initiator", false);
+
+        Button endCallBtn = findViewById(R.id.btnEndCall);
+
+        endCallBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         checkPermissions();
         initialize();
